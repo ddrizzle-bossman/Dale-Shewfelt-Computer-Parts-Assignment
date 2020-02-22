@@ -1,0 +1,151 @@
+<!--
+    Dale Shewfelt's 1CS3U Computer Parts assignment.
+    2/21/2020
+    -Various checkable boxes that, when clicked, show several computer parts and an image associated as well as price.
+    -A button that calculates the total cost amount by adding up all of the computer part prices.
+    -->
+    <Window x:Class="_193937Project1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_193937Project1"
+        mc:Ignorable="d"
+        Title="Build a computer project Dale Shewfelt" Height="350" Width="525" Cursor="SizeAll" Background="DeepSkyBlue" WindowState="Maximized" >
+    <ScrollViewer>
+        <StackPanel HorizontalAlignment="Center">
+            <Label x:Name="TitlePage" Content="Build Your Own COMPUTER!" FontSize="30" FontFamily="Cooper Black" Cursor="Hand" RenderTransformOrigin="0.5,0.5" Margin="0,0,194,0">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="100"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+                <Label.Effect>
+                    <DropShadowEffect Color="#FF5472FF" Opacity="0.69" ShadowDepth="3"/>
+                </Label.Effect>
+            </Label>
+            <Label HorizontalAlignment="Center" FontSize="30" FontFamily="Old English Text MT" Cursor="Wait" Background="{x:Null}" FontStyle="Italic" >By Dale Shewfelt
+            </Label>
+            <CheckBox x:Name="chkCPU" Checked="chkCPU_Checked"  DataContextChanged="CheckBox_DataContextChanged" Unchecked="chkCPU_Unchecked">
+                <Label Content="CPU"></Label>
+            </CheckBox>
+            <Label x:Name="cpuDetails" Visibility="Collapsed" Content="AMD Ryzen 7 2700X 3.7 GHz 8-Core Processor"></Label>
+            <Image x:Name="cpuImage" Visibility="Collapsed" Source="https://cdn.pcpartpicker.com/static/forever/images/product/4e84967ef18c9b42e543b58c836d73ef.256p.jpg" Height="180"></Image>
+            <Label x:Name="cpuMoney" Visibility="Collapsed" Content="$234.99" Background="Gold" HorizontalAlignment="Center"/>
+            <TextBox Name="cpuLink" Visibility="Collapsed" HorizontalAlignment="Center">
+                shorturl.at/jmnoC
+            </TextBox>
+
+
+            <CheckBox x:Name="chkCPUC" Checked="chkCPUC_Checked"  DataContextChanged="CheckBox_DataContextChanged" Unchecked="chkCPUC_Unchecked">
+                <Label Content="CPU COOLER"></Label>
+            </CheckBox>
+            <Label x:Name="cpucDetails" Visibility="Collapsed" Content="AMD Wraith Max 55.78 CFM CPU Cooler"></Label>
+            <Image x:Name="cpucImage" Visibility="Collapsed" Source="https://images-na.ssl-images-amazon.com/images/I/51Kc39zR8EL.jpg" Height="180"></Image>
+            <Label x:Name="cpucMoney" Visibility="Collapsed" Content="$50.94" Background="Gold" HorizontalAlignment="Center"/>
+            <TextBox Name="cpucLink" Visibility="Collapsed" HorizontalAlignment="Center">
+                shorturl.at/puL14
+            </TextBox>
+
+            <CheckBox x:Name="chkMTB" Checked="chkMTB_Checked"  DataContextChanged="CheckBox_DataContextChanged" Unchecked="chkMTB_Unchecked">
+                <Label Content="MOTHERBOARD"></Label>
+            </CheckBox>
+            <Label x:Name="mtbDetails" Visibility="Collapsed">Gigabyte B450M DS3H Micro ATX AM4 Motherboard</Label>
+            <Image x:Name="mtbImage" Visibility="Collapsed" Source="https://cdn.pcpartpicker.com/static/forever/images/product/963f1f2e1cd707c9f01c9a8879edddf8.1600.jpg" Height="180"></Image>
+            <Label x:Name="mtbMoney" Visibility="Collapsed" Content="$103.99" Background="Gold" HorizontalAlignment="Center"/>
+            <TextBox Name="mtbLink" Visibility="Collapsed" HorizontalAlignment="Center">
+                shorturl.at/jtHU2
+            </TextBox>
+
+            <CheckBox x:Name="chkMEM" Checked="chkMEM_Checked"  DataContextChanged="CheckBox_DataContextChanged" Unchecked="chkMEM_Unchecked">
+                <Label Content="MEMORY"></Label>
+            </CheckBox>
+            <Label x:Name="memDetails" Visibility="Collapsed">Corsair Vengeance RGB Pro 16 GB (2 x 8 GB) DDR4-3200 Memory</Label>
+            <Image x:Name="memImage" Visibility="Collapsed" Source="https://images-na.ssl-images-amazon.com/images/I/51Hl4NFFaeL.jpg" Height="180"></Image>
+            <Label x:Name="memMoney" Visibility="Collapsed" Content="$122.99" Background="Gold" HorizontalAlignment="Center"/>
+            <TextBox Name="memLink" Visibility="Collapsed" HorizontalAlignment="Center">
+                shorturl.at/auBHR
+            </TextBox>
+
+            <CheckBox x:Name="chkSTG" Checked="chkSTG_Checked"  DataContextChanged="CheckBox_DataContextChanged" Unchecked="chkSTG_Unchecked">
+                <Label Content="STORAGE"></Label>
+            </CheckBox>
+            <Label x:Name="stgDetails" Visibility="Collapsed">Samsung 970 Evo 500 GB M.2-2280 NVME Solid State Drive</Label>
+            <Image x:Name="stgImage" Visibility="Collapsed" Source="https://cdn.pcpartpicker.com/static/forever/images/product/09a31f32abb3daaf5ed9b849bd60e675.1600.jpg" Height="180"></Image>
+            <Label x:Name="stgMoney" Visibility="Collapsed" Content="$140.61" Background="Gold" HorizontalAlignment="Center"/>
+            <TextBox Name="stgLink" Visibility="Collapsed" HorizontalAlignment="Center">
+                shorturl.at/bxyGP
+            </TextBox>
+            
+            <CheckBox x:Name="chkVCD" Checked="chkVCD_Checked"  DataContextChanged="CheckBox_DataContextChanged" Unchecked="chkVCD_Unchecked">
+                <Label Content="VIDEO CARD"></Label>
+            </CheckBox>
+            <Label x:Name="vcdDetails" Visibility="Collapsed">MSI Radeon RX 570 8 GB ARMOR OC Video Card</Label>
+            <Image x:Name="vcdImage" Visibility="Collapsed" Source="https://images-na.ssl-images-amazon.com/images/I/51dteXRc69L.jpg" Height="180"></Image>
+            <Label x:Name="vcdMoney" Visibility="Collapsed" Content="$219.99" Background="Gold" HorizontalAlignment="Center"/>
+            <TextBox Name="vcdLink" Visibility="Collapsed" HorizontalAlignment="Center">
+                shorturl.at/bqsy4
+            </TextBox>
+
+            <CheckBox x:Name="chkCSE" Checked="chkCSE_Checked"  DataContextChanged="CheckBox_DataContextChanged" Unchecked="chkCSE_Unchecked">
+                <Label Content="CASE"></Label>
+            </CheckBox>
+            <Label x:Name="cseDetails" Visibility="Collapsed">BitFenix Comrade ATX Mid Tower Case</Label>
+            <Image x:Name="cseImage" Visibility="Collapsed" Source="https://cdn.pcpartpicker.com/static/forever/images/product/c667d5e741484f8dab12c1c71c2dd155.med.256p.jpg" Height="180"></Image>
+            <Label x:Name="cseMoney" Visibility="Collapsed" Content="$64.98" Background="Gold" HorizontalAlignment="Center"/>
+            <TextBox Name="cseLink" Visibility="Collapsed" HorizontalAlignment="Center">
+                shorturl.at/jrLU0
+            </TextBox>
+
+            <CheckBox x:Name="chkPWR" Checked="chkPWR_Checked"  DataContextChanged="CheckBox_DataContextChanged" Unchecked="chkPWR_Unchecked">
+                <Label Content="POWER SUPPLY"></Label>
+            </CheckBox>
+            <Label x:Name="pwrDetails" Visibility="Collapsed">Corsair CXM 550 W 80+ Bronze Certified Semi-modular ATX Power Supply</Label>
+            <Image x:Name="pwrImage" Visibility="Collapsed" Source="http://ecx.images-amazon.com/images/I/51RxdsALapL.jpg" Height="180"></Image>
+            <Label x:Name="pwrMoney" Visibility="Collapsed" Content="$86.99" Background="Gold" HorizontalAlignment="Center"/>
+            <TextBox Name="pwrLink" Visibility="Collapsed" HorizontalAlignment="Center">
+                shorturl.at/cmHQ7
+            </TextBox>
+
+            <CheckBox x:Name="chkDVD" Checked="chkDVD_Checked"  DataContextChanged="CheckBox_DataContextChanged" Unchecked="chkDVD_Unchecked">
+                <Label Content="OPTICAL DRIVE"></Label>
+            </CheckBox>
+            <Label x:Name="dvdDetails" Visibility="Collapsed">Asus DRW-24F1ST DVD/CD Writer </Label>
+            <Image x:Name="dvdImage" Visibility="Collapsed" Source="http://ecx.images-amazon.com/images/I/41VOTifL3uL.jpg" Height="180"></Image>
+            <Label x:Name="dvdMoney" Visibility="Collapsed" Content="$27.99" Background="Gold" HorizontalAlignment="Center"/>
+            <TextBox Name="dvdLink" Visibility="Collapsed" HorizontalAlignment="Center">
+                shorturl.at/bhrxJ
+            </TextBox>
+
+            <CheckBox x:Name="chkOS" Checked="chkOS_Checked"  DataContextChanged="CheckBox_DataContextChanged" Unchecked="chkOS_Unchecked">
+                <Label Content="OPERATING SYSTEM"></Label>
+            </CheckBox>
+            <Label x:Name="osDetails" Visibility="Collapsed" FontStyle="Oblique" FontWeight="Bold" FontFamily="Cooper Black"  Content="Choose an OPERATING SYSTEM" FontSize="20"> </Label>
+            <RadioButton x:Name="Windows10h" Visibility="Collapsed" GroupName="OS" Content="Windows 10 Home OS" Checked="windows10h_Checked"  Unchecked="windows10h_Unchecked"/>
+            <Label x:Name="w10homeMoney" Visibility="Collapsed" Content="$208.08" Background="Gold" HorizontalAlignment="Center"/>
+            <RadioButton x:Name="osLinux" Visibility="Collapsed" GroupName="OS" Content="Linux OS" Checked="osLinux_Checked" Unchecked="osLinux_Unchecked"/>
+            <Label x:Name="linuxMoney" Visibility="Collapsed" Content="$0.00" Background="Gold" HorizontalAlignment="Center"/>
+            <Image x:Name="tux" Visibility="Collapsed" Height="180" Cursor="ArrowCD" Source="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Tux.png/220px-Tux.png" />
+            <RadioButton x:Name="Windows10p" Visibility="Collapsed" GroupName="OS" Content="Windows 10 PRO OS" Checked="windows10p_Checked"  Unchecked="windows10p_Unchecked"/>
+            <Label x:Name="w10proMoney" Visibility="Collapsed" Content="$199.99" Background="Gold" HorizontalAlignment="Center"/>
+            <RadioButton x:Name="Windows98" Visibility="Collapsed" GroupName="OS" Content="Windows 98 OS" Checked="Windows98_Checked"  Unchecked="Windows98_Unchecked"/>
+            <Label x:Name="w98proMoney" Visibility="Collapsed" Content="$2.00" Background="Gold" HorizontalAlignment="Center"/>
+
+            <CheckBox x:Name="chkPxl" Checked="chkPxl_Checked"  DataContextChanged="CheckBox_DataContextChanged" Unchecked="chkPxl_Unchecked">
+                <Label Content="GOOGLE PIXEL REPLACMENT BATTERY"></Label>
+            </CheckBox>
+            <Label x:Name="pxlDetails" Visibility="Collapsed">Asesino Google Pixel 1 Replacment Battery</Label>
+            <Image x:Name="pxlImage" Visibility="Collapsed" Source="https://images-na.ssl-images-amazon.com/images/I/61yYqHhmRnL._SL1184_.jpg" Height="180"></Image>
+            <Label x:Name="pxlMoney" Visibility="Collapsed" Content="$22.99" Background="Gold" HorizontalAlignment="Center"/>
+            <TextBox Name="pxlLink" Visibility="Collapsed" HorizontalAlignment="Center">
+                shorturl.at/bsBCZ
+            </TextBox>
+
+            <Button x:Name="price" Background="Gold" Content="CLICK HERE FOR TOTAL $$$" Click="price_Click"/>
+            <Label x:Name="lblOutput"></Label>
+        </StackPanel>
+    </ScrollViewer>
+</Window>
